@@ -18,11 +18,11 @@ before_install:
 
 install:
   # - sudo apt-get install libgtest-dev
-  # - cd /usr/src/gtest
-  # - sudo cmake .
-  # - sudo make
-  # - sudo mv libgtest* /usr/lib/
-  # - cd "${TRAVIS_BUILD_DIR}"
+  - cd /usr/src/gtest
+  - sudo cmake .
+  - sudo make
+  - sudo mv libgtest* /usr/lib/
+  - cd "${TRAVIS_BUILD_DIR}"
   # - sudo apt-get install libeigen3-dev
   - pip install --user cpp-coveralls
 

@@ -18,14 +18,11 @@ before_install:
   # - eval "CC=gcc-6 && CXX=g++-6"
 
 install:
-  # - sudo apt-get install libgtest-dev
   - cd /usr/src/gtest
-  # - sudo cmake .
   - sudo cmake -DBUILD_SHARED_LIBS=ON .
   - sudo make
   - sudo mv libgtest* /usr/lib/
   - cd "${TRAVIS_BUILD_DIR}"
-  # - sudo apt-get install libeigen3-dev
   - pip install --user cpp-coveralls
 
 script:

@@ -1,10 +1,20 @@
 language:
   - cpp
 
+os:
+  - linux
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+
+before_install:
+  - eval "CC=gcc-7 && CXX=g++-7"
+
 install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r-test -y
-  - sudo apt-get update -q
-  - sudo apt-get install g++-7 -y
   - sudo apt-get install libgtest-dev
   - cd /usr/src/gtest
   - sudo cmake .
@@ -15,7 +25,6 @@ install:
   - pip install --user cpp-coveralls
 
 script:
-  - export CXX=g++-7
   - cd build
   - cmake ../src
   - make

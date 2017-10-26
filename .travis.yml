@@ -9,19 +9,21 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-7
+      - g++-6
+      - libgtest-dev
+      - cpp-coveralls
 
 before_install:
-  - eval "CC=gcc-7 && CXX=g++-7"
+  - eval "CC=gcc-6 && CXX=g++-6"
 
 install:
-  - sudo apt-get install libgtest-dev
-  - cd /usr/src/gtest
-  - sudo cmake .
-  - sudo make
-  - sudo mv libgtest* /usr/lib/
-  - cd "${TRAVIS_BUILD_DIR}"
-  - sudo apt-get install libeigen3-dev
+  # - sudo apt-get install libgtest-dev
+  # - cd /usr/src/gtest
+  # - sudo cmake .
+  # - sudo make
+  # - sudo mv libgtest* /usr/lib/
+  # - cd "${TRAVIS_BUILD_DIR}"
+  # - sudo apt-get install libeigen3-dev
   - pip install --user cpp-coveralls
 
 script:

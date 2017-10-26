@@ -11,7 +11,7 @@ addons:
     packages:
       - g++-6
       - libgtest-dev
-      - cpp-coveralls
+      - libeigen3-dev
 
 before_install:
   - eval "CC=gcc-6 && CXX=g++-6"
